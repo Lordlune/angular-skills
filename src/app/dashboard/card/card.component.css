@@ -1,3 +1,27 @@
 .example-card {
-    max-width: 400px;
-  }
+  max-width: 400px;
+}
+
+.noLikes{
+  color: black;
+}
+
+.noLikes:hover{
+  color: grey;
+}
+
+.fiveLikes {
+  color: blue;
+}
+
+.fiveLikes:hover{
+  color: aqua;
+}
+
+.tenLikes {
+  color: chocolate;
+}
+
+.tenLikes:hover {
+  color: gold;
+}

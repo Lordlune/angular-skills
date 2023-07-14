@@ -9,7 +9,15 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>LIKE {{card.likes}}</button>
-    <button mat-button>SHARE</button>
+    <button mat-button matTooltip="LIKE" (click)="onLike(card)">
+      <mat-icon [ngClass]="{
+        noLikes: card.likes < 5,
+        fiveLikes: card.likes >= 5,
+        tenLikes: card.likes >= 10}">thumb_up</mat-icon>
+      {{card.likes}}
+    </button>
+    <button mat-button matTooltip="SHARE" (click)="onShare()">
+      <mat-icon class="noLikes">send</mat-icon>
+    </button>
   </mat-card-actions>
 </mat-card>

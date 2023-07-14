@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -8,17 +9,19 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CardComponent implements OnInit {
 
   @Input() card;
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   ngOnInit() {
   }
 
-  onLike(card: any){
-    // TODO: incrementar o like, salvar via rest
+  onLike(card: any) {
+    card.likes = card.likes + 1;
   }
 
-  onShare(card: any){
-    // TODO: abrir o link do seu linkedin
+  onShare() {
+    window.open('https://www.linkedin.com/in/patryck-vieira-15b5a012b/', '_blank')
   }
 
 }
