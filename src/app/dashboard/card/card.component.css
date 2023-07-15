@@ -1,27 +1,100 @@
-.example-card {
-  max-width: 400px;
+.card {
+  max-width: 25em;
+  height: 35em;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 1em;
+  background: rgba(255, 255, 255, 0.2);
 }
 
-.noLikes{
+.card:hover {
+  transform: translateY(-5px) scale(1.005) translateZ(0);
+  box-shadow: 0 24px 36px rgba(0, 0, 0, 0.11),
+    0 24px 46px var(--box-shadow-color);
+}
+
+.card:hover .overlay {
+  transform: scale(4) translateZ(0);
+}
+
+
+.noLikes {
   color: black;
-}
 
-.noLikes:hover{
-  color: grey;
+  &:hover {
+    color: grey;
+  }
+
 }
 
 .fiveLikes {
   color: blue;
-}
 
-.fiveLikes:hover{
-  color: aqua;
+  &:hover {
+    color: aqua;
+  }
 }
 
 .tenLikes {
   color: chocolate;
+
+  &:hover {
+    color: gold;
+  }
+
 }
 
-.tenLikes:hover {
-  color: gold;
+.card-content {
+  position: absolute;
+  bottom: 0em;
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  padding-top: 1em;
+  max-height: 15em;
+  display: block;
+  object-fit: cover;
+}
+
+.card-description {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.content-img {
+  display: flex;
+  justify-content: center;
+}
+
+.banner-image {
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+mat-card {
+  background: none;
+}
+
+mat-card-title {
+  font-family: 'Righteous', sans-serif;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 150%;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }

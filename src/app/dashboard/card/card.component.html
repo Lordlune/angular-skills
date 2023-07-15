@@ -1,23 +1,34 @@
-<mat-card class="example-card">
-  <mat-card-header>
-    <mat-card-title>{{card.name}}</mat-card-title>
-  </mat-card-header>
-  <img mat-card-image [src]="card.pic" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-      {{card.description}}
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button matTooltip="LIKE" (click)="onLike(card)">
-      <mat-icon [ngClass]="{
+<div class="container pb-3">
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>{{card.name}}</mat-card-title>
+    </mat-card-header>
+    <div class="content-img">
+      <img class="banner-image" mat-card-image [src]="card.pic" alt="Photo of a Shiba Inu">
+    </div>
+
+    <div class="card-description">
+      <mat-card-content>
+        <p>
+          {{card.description}}
+        </p>
+      </mat-card-content>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <mat-card-actions class="card-content">
+        <button mat-button matTooltip="LIKE" (click)="onLike(card)">
+          <mat-icon [ngClass]="{
         noLikes: card.likes < 5,
         fiveLikes: card.likes >= 5,
         tenLikes: card.likes >= 10}">thumb_up</mat-icon>
-      {{card.likes}}
-    </button>
-    <button mat-button matTooltip="SHARE" (click)="onShare()">
-      <mat-icon class="noLikes">send</mat-icon>
-    </button>
-  </mat-card-actions>
-</mat-card>
+          {{card.likes}}
+        </button>
+        <button mat-button matTooltip="SHARE" (click)="onShare()">
+          <mat-icon class="noLikes">send</mat-icon>
+        </button>
+      </mat-card-actions>
+    </div>
+
+  </mat-card>
+</div>
