@@ -7,7 +7,8 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 export class FakeApiService implements InMemoryDbService {
 
   persistData: any;
-
+  private loading: boolean = false;
+  
   constructor() { 
     this.checkData();
   }
@@ -16,9 +17,17 @@ export class FakeApiService implements InMemoryDbService {
     this.persistData = JSON.parse(window.localStorage.getItem('dataPersist'));
   }
 
+  setLoading(loading: boolean) {
+    this.loading = loading;
+  }
+
+  getLoading(): boolean {
+    return this.loading;
+  }
+
   createDb() {
     let skills = []
-    if(this.persistData.length > 0){
+    if(this.persistData){
       skills = this.persistData
     }else{
       skills = [

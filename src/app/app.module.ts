@@ -1,7 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatButtonModule, MatCardModule, MatChipsModule, MatIconModule, MatTooltipModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatChipsModule, MatIconModule, MatProgressSpinnerModule, MatTooltipModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -24,7 +24,8 @@ import { HelloComponent } from './hello.component';
     MatIconModule,
     HttpClientModule, 
     MatTooltipModule,
-    InMemoryWebApiModule.forRoot(FakeApiService, { delay: 0, put204: false })
+    MatProgressSpinnerModule,
+    InMemoryWebApiModule.forRoot(FakeApiService, { delay: 5000, put204: false })
   ],
   declarations: [
     AppComponent, 

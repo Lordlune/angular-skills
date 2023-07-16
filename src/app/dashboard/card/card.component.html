@@ -1,34 +1,36 @@
-<div class="container pb-3">
-  <mat-card class="card">
-    <mat-card-header>
-      <mat-card-title>{{card.name}}</mat-card-title>
-    </mat-card-header>
-    <div class="content-img">
-      <img class="banner-image" mat-card-image [src]="card.pic" alt="Photo of a Shiba Inu">
+<div class="card">
+  <div class="card-header">
+    <img mat-card-image [src]="card.pic" alt="Photo of a Shiba Inu">
+    <div class="card-header-slanted-edge">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200">
+        <path class="polygon" d="M-20,200,2000,10V200Z" />
+      </svg>
     </div>
+  </div>
 
-    <div class="card-description">
-      <mat-card-content>
-        <p>
-          {{card.description}}
-        </p>
-      </mat-card-content>
-    </div>
+  <div class="card-body">
+    <h2 class="name">{{card.name}}</h2>
+    <div class="bio">{{card.description}}</div>
+  </div>
 
-    <div class="d-flex justify-content-center">
-      <mat-card-actions class="card-content">
-        <button mat-button matTooltip="LIKE" (click)="onLike(card)">
+  <div class="card-footer">
+    <div class="row d-flex justify-content-center">
+      <div class="stat">
+        <span class="label">Like</span>
+        <button mat-button (click)="onLike(card)">
           <mat-icon [ngClass]="{
-        noLikes: card.likes < 5,
-        fiveLikes: card.likes >= 5,
-        tenLikes: card.likes >= 10}">thumb_up</mat-icon>
-          {{card.likes}}
+            noLikes: card.likes < 5,
+            fiveLikes: card.likes >= 5,
+            tenLikes: card.likes >= 10}">thumb_up</mat-icon>
+          <span class="value">{{card.likes}}</span>
         </button>
+      </div>
+      <div class="stat">
+        <span class="label">Share</span>
         <button mat-button matTooltip="SHARE" (click)="onShare()">
           <mat-icon class="noLikes">send</mat-icon>
         </button>
-      </mat-card-actions>
+      </div>
     </div>
-
-  </mat-card>
+  </div>
 </div>
